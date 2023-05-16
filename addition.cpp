@@ -39,9 +39,19 @@ int main () {
             cout << vec[i][j] << " ";
         cout << endl;
     }
+        cout << endl;
      for (int i = 0; i < vec2.size(); i++) {
         for (int j = 0; j < vec2[i].size(); j++)
             cout << vec2[i][j] << " ";
+        cout << endl;
+    }
+        cout << endl;
+
+    // addition 
+
+    for (int i = 0; i < cols; i++) {
+        for (int j = 0; j < rows; j++)
+            cout << vec2[i][j] + vec[i][j] << " ";
         cout << endl;
     }
     return 0;
