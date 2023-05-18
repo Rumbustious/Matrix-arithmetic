@@ -4,6 +4,9 @@
 #include "header/subtraction.h"
 #include "header/multiplication.h"
 #include "header/determinant.h"
+#include "header/cofactor.h"
+#include "header/transpose.h"
+#include "header/inverse.h"
 
 using namespace std;
 
@@ -85,7 +88,7 @@ int main(){
 
     // choose the operation
     char operation;
-    cout << "Pick up an operation : \nA for Addition of Two Matrices \nS for Subtraction of Two Matrices \nM for Multiplication of Two Matrices\nC for Cofactor of Matrix \nT for Transpose of Matrix \nI for Inverse of Two Matrices"<< endl;
+    cout << "Pick up an operation : \nA for Addition of Two Matrices \nS for Subtraction of Two Matrices \nM for Multiplication of Two Matrices\nD for Determinant of Matrix \nC for Cofactor of Matrix \nT for Transpose of Matrix \nI for Inverse of Two Matrices"<< endl;
     cin >> operation;
     if (operation == 'A' || 'a'){
         createMatrices(vec, vec2);
@@ -110,20 +113,25 @@ int main(){
         }
       
         multiply(vec,vec2);
+    } else if (operation == 'D' || operation == 'd'){
+        createMatrices(vec);
+        if (vec.size() != vec[0].size()){
+             cout << "Matrix should be a square matrix, Ex: 4x4 matrix" << endl;
+            return 1;
+        }
+        determinant(vec);
     } else if (operation == 'C' || operation == 'c'){
         createMatrices(vec);
         if (vec.size() != vec[0].size()){
              cout << "Matrix should be a square matrix, Ex: 4x4 matrix" << endl;
             return 1;
         }
-    }
-    
-
-
-
-
-
-
-
-
+        cofactor(vec, vec2);
+    } else if (operation == 'T' || operation == 't'){
+        createMatrices(vec);
+        transpose(vec, vec2); 
+    } else if (operation == 'I' || operation == 'i'){
+        createMatrices(vec);
+        inverse(vec, vec2);
+    } 
 }
