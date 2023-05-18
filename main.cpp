@@ -11,6 +11,7 @@
 using namespace std;
 
 void createMatrices(vector<vector<int>> &vec, vector<vector<int>> &vec2) {
+    author();
     int rows, cols, num;
    
     cout << "Enter the number of rows in the first matrix:\n";
