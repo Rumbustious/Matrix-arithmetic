@@ -133,5 +133,7 @@ int main(){
     } else if (operation == 'I' || operation == 'i'){
         createMatrices(vec);
         inverse(vec, vec2);
-    } 
+    } else {
+        cout << "hello";
+    }
 }
