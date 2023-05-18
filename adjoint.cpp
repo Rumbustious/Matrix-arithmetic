@@ -54,6 +54,3 @@ cout << det << endl;
 
 
 }
-
-
-
