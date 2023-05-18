@@ -1,10 +1,10 @@
 #include<iostream>
 #include<vector>
 #include "addition.h"
-#include "substraction.h"
+#include "subtraction.h"
 #include "multiplication.h"
 #include "determinant.h"
-#include "inverse.h"
+
 using namespace std;
 
 
@@ -75,7 +75,7 @@ int main(){
             return 1;
         }
 
-        substract(vec,vec2);
+        subtract(vec,vec2);
     }
     else if (operation == 'M'){
 
