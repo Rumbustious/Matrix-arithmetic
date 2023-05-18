@@ -2,3 +2,4 @@
 *.o
 .vscode
 tempCodeRunnerFile.cpp
+tempCodeRunnerFile.h
