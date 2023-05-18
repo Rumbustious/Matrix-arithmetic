@@ -1,9 +1,9 @@
 #include<iostream>
 #include<vector>
-#include "addition.h"
-#include "subtraction.h"
-#include "multiplication.h"
-#include "determinant.h"
+#include "header/addition.h"
+#include "header/subtraction.h"
+#include "header/multiplication.h"
+#include "header/determinant.h"
 
 using namespace std;
 
