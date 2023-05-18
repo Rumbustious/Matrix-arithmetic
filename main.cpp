@@ -116,7 +116,6 @@ int main(){
              cout << "Matrix should be a square matrix, Ex: 4x4 matrix" << endl;
             return 1;
         }
-        kg
     }
     
 
