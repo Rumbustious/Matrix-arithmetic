@@ -10,7 +10,7 @@
 
 using namespace std;
 
-void createMatrices(vector<vector<int> > &vec, vector<vector<int> > &vec2) {
+void createMatrices(vector<vector<int>> &vec, vector<vector<int>> &vec2) {
     int rows, cols, num;
    
     cout << "Enter the number of rows in the first matrix:\n";
@@ -19,13 +19,13 @@ void createMatrices(vector<vector<int> > &vec, vector<vector<int> > &vec2) {
     cin >> cols;
 
     // Initializing the vector of vectors
-    vector<vector<int> > vec;
 
    for (int i = 0; i < rows; i++) {
         // Vector to store column elements
         vector<int> v1;
   
         for (int j = 0; j < cols; j++) {
+            cout << "Enter element: ";
             cin >> num;
             v1.push_back(num);
         }
@@ -34,8 +34,7 @@ void createMatrices(vector<vector<int> > &vec, vector<vector<int> > &vec2) {
         vec.push_back(v1);
     }
 
-    if (vec2.size() == 1){
-        vector<vector<int> > vec2;
+   
         cout << "Enter the number of rows in the second matrix:\n";
         cin >> rows; 
         cout << "Enter the number of columns in the second matrix:\n";
@@ -46,6 +45,7 @@ void createMatrices(vector<vector<int> > &vec, vector<vector<int> > &vec2) {
             vector<int> v2;
     
             for (int j = 0; j < cols; j++) {
+                cout << "Enter element: ";
                 cin >> num;
                 v2.push_back(num);
             }
@@ -53,9 +53,8 @@ void createMatrices(vector<vector<int> > &vec, vector<vector<int> > &vec2) {
             // to create the 2D vector
             vec2.push_back(v2);
         }
-    }
 }
-void createMatrices(vector<vector<int> > &vec) {
+void createMatrix(vector<vector<int>> &vec) {
     int rows, cols, num;
    
     cout << "Enter the number of rows in the matrix:\n";
@@ -64,13 +63,13 @@ void createMatrices(vector<vector<int> > &vec) {
     cin >> cols;
 
     // Initializing the vector of vectors
-    vector<vector<int> > vec;
 
    for (int i = 0; i < rows; i++) {
         // Vector to store column elements
         vector<int> v1;
   
         for (int j = 0; j < cols; j++) {
+            cout << "Enter element: ";
             cin >> num;
             v1.push_back(num);
         }
@@ -85,12 +84,15 @@ int main(){
 
     vector<vector<int> > vec;
     vector<vector<int> > vec2;
+    vector<vector<int> > vec3;
+    vector<vector<int> > vec4;
+
 
     // choose the operation
     char operation;
     cout << "Pick up an operation : \nA for Addition of Two Matrices \nS for Subtraction of Two Matrices \nM for Multiplication of Two Matrices\nD for Determinant of Matrix \nC for Cofactor of Matrix \nT for Transpose of Matrix \nI for Inverse of Two Matrices"<< endl;
     cin >> operation;
-    if (operation == 'A' || 'a'){
+    if (operation == 'A' || operation =='a'){
         createMatrices(vec, vec2);
          if ((vec.size() != vec2.size()) || (vec[0].size() != vec2[0].size())){
              cout << "Two matrices should have same dimensions, Ex: two 4x4 matrices" << endl;
@@ -114,26 +116,25 @@ int main(){
       
         multiply(vec,vec2);
     } else if (operation == 'D' || operation == 'd'){
-        createMatrices(vec);
+        createMatrix(vec);
         if (vec.size() != vec[0].size()){
              cout << "Matrix should be a square matrix, Ex: 4x4 matrix" << endl;
             return 1;
         }
-        determinant(vec);
+        cout << determinant(vec) << endl;
+        
     } else if (operation == 'C' || operation == 'c'){
-        createMatrices(vec);
+        createMatrix(vec);
         if (vec.size() != vec[0].size()){
              cout << "Matrix should be a square matrix, Ex: 4x4 matrix" << endl;
             return 1;
         }
         cofactor(vec, vec2);
     } else if (operation == 'T' || operation == 't'){
-        createMatrices(vec);
+        createMatrix(vec);
         transpose(vec, vec2); 
     } else if (operation == 'I' || operation == 'i'){
-        createMatrices(vec);
-        inverse(vec, vec2);
-    } else {
-        cout << "hello";
-    }
+        createMatrix(vec);
+        inverse(vec);
+    } 
 }

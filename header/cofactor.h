@@ -1,11 +1,11 @@
 #include <iostream>
 #include <vector>
-#include "header/determinant.h"
+#ifndef DETERMINANT_H
+#define DETERMINANT_H
 
 using namespace std;
-void cofactor(vector< vector<int> > matrix, vector< vector<int> > &store) {
-
-    vector<vector<int>> store;
+void cofactor(vector< vector<int> > matrix, vector<vector<int>> &store) {
+       cout << "Cofactor for this matrix is: " << endl;
         for (int z = 0; z < matrix.size(); z++){
             vector<int> v2; 
 
@@ -40,6 +40,8 @@ void cofactor(vector< vector<int> > matrix, vector< vector<int> > &store) {
                     }
                     cout << endl;
                 }
-                cout << endl;
 
 }
+
+
+#endif
