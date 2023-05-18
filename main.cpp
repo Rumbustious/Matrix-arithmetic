@@ -1,10 +1,11 @@
 #include<iostream>
 #include<vector>
-#include <addition.h>
-
+#include "addition.h"
+#include "substraction.h"
+#include "multiplication.h"
+#include "determinant.h"
+#include "inverse.h"
 using namespace std;
-
-void addition(vector<vector<int>> vec1, vector<vector<int>> vec2);
 
 
 int main(){
@@ -61,29 +62,29 @@ int main(){
 
         if ((vec.size() != vec2.size()) || (vec[0].size() != vec2[0].size())){
              cout << "please enter two matrices with the same dimentions, Ex: two 4x4 matrices" << endl;
-        return 1 ;
+            return 1;
         }
 
-        addition(vec,vec2);
+        add(vec,vec2);
     }
-    // else if (operation == 'S'){
+    else if (operation == 'S'){
 
-    //     if ((vec.size() != vec2.size()) || (vec[0].size() != vec2[0].size())){
-    //          cout << "please enter two matrices with the same dimentions, Ex: two 4x4 matrices" << endl;
-    //     return 1 ;
-    //     }
+        if ((vec.size() != vec2.size()) || (vec[0].size() != vec2[0].size())){
+             cout << "please enter two matrices with the same dimentions, Ex: two 4x4 matrices" << endl;
+            return 1;
+        }
 
-    //     sub(vec,vec2);
-    // }
-    // else if (operation == 'M'){
+        substract(vec,vec2);
+    }
+    else if (operation == 'M'){
 
-    //     if (vec[0].size() != vec2.size()){
-    //          cout << "please enter two matrices with the compatible dimentions, The number of columns in A should equal the number of rows of B" << endl;
-    //     return 1 ;
-    //     }
-
-    //     mul(vec,vec2);
-    // }
+        if (vec[0].size() != vec2.size()){
+             cout << "please enter two matrices with the compatible dimentions, The number of columns in A should equal the number of rows of B" << endl;
+        return 1 ;
+        }
+        // 2x3 . 3xY
+        multiply(vec,vec2);
+    }
 
 
 
